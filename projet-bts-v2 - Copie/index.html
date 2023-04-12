@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="bootstrap.min.css">
+    <title>BTS 2023</title>
+</head>
+<body>
+    <header class="navbar navbar-expand-md navbar-dark bg-dark ">
+       <b>Email : Osirusjack667@gmail.com</b>
+    </header>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm-4"></div>
+            <div class="col-sm-4">
+                <div class="alert alert-success mt-5">
+                    Bonne nouvelle! cette année vous avez avez la possibilité de 
+                    garantir votre succès aux examens du BTS dans la région de l'Ouest-Cameroun
+                </div>
+                <h3>En savoir plus sur nos objectifs</h3>
+                <div class="div2">
+                    <b>En tant qu'officier du BTS, je m'appelle CHARLE ATEBA, et je voudrais encourager tous les étudiants 
+                        qui vont composer le BTS à se préparer de manière éfficace et à travailler dur pour réussir leur examen.
+                        Les résultats du BTS sont un élément important de votre parcours académique et professionnel, et je suis là
+                        pour vous aider à atteindre vos objectifs. En collaborant avec moi, vous pouvez vous assurer que vous êtes
+                        bien préparés pour votre examen, que vous avez les connaissances et les compétences néccessaires pour réussir 
+                        et que vous êtes en mesure de performer au meilleur de vos capacités. Je suis là pour vous guider, vous soutenir
+                        et vous encourager tout au long du processus. Si vous travaillez dur, vous pouvez réussir votre examen et obtenir votre BTS avec succès.
+                        Je suis là pour vous aider à atteindre cet objectif, en vous fournissant les informations nécessaires pour réussir et
+                        en vous guidant à travers chaque étape du processus. Je suis également là pour répondre à toutes vos questions et vous aider
+                        à surmonter les obstacles que vous pourriez rencontrer sur votre chemin. N'oubliez pas que la réussite dépend de votre 
+                        engagement personnel et de votre travail acharné. Je suis là pour vous aider, mais vous devez également 
+                        faire votre part Ensemble , nous pouvons travailler pour que vous réussissiez votre examen et que vous
+                        obteniez votre BTS avec succès.
+                    </b>
+                </div>
+                <div class="alert alert-danger mt-5" id="error"></div>
+                <div class="alert alert-success" id="errorD"></div>
+                <form method="POST" class="mt-3">
+                    <h1 class="h2">Coordonées personnelles </h1>
+                    <div class="form-group">
+                        <label for="nom">Nom complet</label>
+                        <input type="text" id="nom" name="nom" class="form-control" autofocus>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="text">Matricule</label>
+                        <input type="matricule" id="matricule" name="matricule" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="telephone">Telephone</label>
+                        <input type="number" id="telephone" name="telephone" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="Ville">Ville</label>
+                        <input type="text" id="Ville" name="ville" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="Examen">Examen à composer</label>
+                        <input type="text" id="Examen" name="examen" class="form-control">
+                    </div>
+                    <div class="form-floating">
+                        <select id="montant" name="montant" class="form-select mt-3">
+                            <option selected>---Montant à verser---</option>
+                            <option value="25000">25000 FCFA</option>
+                        </select>
+                        <label for="montant">Montant à verser</label>
+                    </div>
+                    <button type="submit" name="submit" id="submit" class="btn btn-primary btn-lg mt-4 w-100">Soumettre</button>
+                </form>
+            </div>
+            <div class="col-sm-4"></div>
+        </div>
+    </div>
+
+    <footer class="footer2 mt-5 p-4 bg-dark w-100">
+        <div class="col-sm-4">
+            TOUS DROITS RESERVES &copy;2022
+        </div>
+    </footer>
+</body>
+</html>
+<script>
+    let submit  = document.querySelector("#submit");
+    let errorC  = document.querySelector("#error");
+    let errorD  = document.querySelector("#errorD");
+
+    errorC.style.display="none";
+    errorD.style.display="none";
+
+    submit.addEventListener("click", function(e){
+
+        let nom         = document.querySelector("#nom");
+        let email       = document.querySelector("#email");
+        let telephone   = document.querySelector("#telephone");
+        let adresse     = document.querySelector("#adresse");
+        let matricule   = document.querySelector("#matricule");
+
+        if(nom.value.length < 5){
+
+            error.style.display="block";
+            errorC.textContent = "Votre nom est court!";
+            e.preventDefault();
+
+        }else if(email.value.length < 8){
+
+            error.style.display="block";
+            errorC.textContent = "Votre email est court!";
+            e.preventDefault();
+
+        }else if(matricule.value.length < 8){
+
+            error.style.display="block";
+            errorC.textContent = "Votre matricule est invalid!";
+            e.preventDefault();
+        }else if(telephone.value.length < 10){
+
+            error.style.display="block";
+            errorC.textContent = "Votre numero de telephone est court!";
+            e.preventDefault();
+
+        }else{
+            errorC.style.display="block";
+            errorD.textContent = "INSCRIPTION REUSSI !";
+        }
+    })
+</script>
+
+<style>
+    body{
+    background-color: rgb(83, 85, 87);
+    color: #fff;
+}
+form{
+    background-color: darkgray;
+    height: 600px;
+    width: 430px;
+    padding: 15px;
+    border-radius: 10px;
+    color: #000;
+}
+
+.div2{
+
+    width: 430px;
+    border: 2px solid rgb(75, 75, 201);
+    padding: 30px;
+    background: rgba(208, 165, 108, 0.668);
+}
+
+@media screen and (max-width: 500px) {
+    
+    header{
+        width: 100%;
+        height: 100%;
+        margin-left: 0px;
+    }
+    form{
+        width: 100%;
+    }
+    .div2{
+        width: 100%;
+    }
+    header b{
+        margin-left: 70px;
+    }
+    footer div{
+        margin-left: 70px;
+    }
+}
+</style>
